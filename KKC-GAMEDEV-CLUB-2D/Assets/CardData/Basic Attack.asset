@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Basic Attack
   m_EditorClassIdentifier: 
   cardName: Basic Attack
-  cardType: 
-  damageMin: 0
-  damageMax: 0
-  damageType: 
+  cardFlavor: 00000000
+  flavorPoints: 0
+  damageMin: 1
+  damageMax: 8
+  damageType: 00000000
   cardSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
