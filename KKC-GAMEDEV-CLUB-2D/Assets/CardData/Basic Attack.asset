@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Basic Attack
   cardFlavor: 00000000
-  flavorPoints: 0
+  flavorPoints: 1
   damageMin: 1
   damageMax: 8
   damageType: 00000000
