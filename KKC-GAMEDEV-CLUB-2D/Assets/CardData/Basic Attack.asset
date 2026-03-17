@@ -15,7 +15,7 @@ MonoBehaviour:
   cardName: Basic Attack
   cardFlavor: 00000000
   flavorPoints: 1
-  damageMin: 1
+  damageMin: 2
   damageMax: 8
   damageType: 00000000
   cardSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}

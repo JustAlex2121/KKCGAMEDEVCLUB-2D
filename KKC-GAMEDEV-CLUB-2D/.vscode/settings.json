@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "KKC-GAMEDEV-CLUB-2D.sln"
+    "dotnet.defaultSolution": "KKC-GAMEDEV-CLUB-2D.slnx"
 }
