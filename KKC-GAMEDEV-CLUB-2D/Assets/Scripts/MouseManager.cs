@@ -1,26 +1,26 @@
-﻿using.System.Collections;
-using.System.Collections.Generic;
-using.UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class MouseManager : MonoBehaviour
 {
     public static MouseManager instance;
-    public Item currentlyHeldItem;
+    public ScriptableItem currentlyHeldItem;
 
     private void Awake()
     {
         instance = this;
     }
 
-    public void UpdateHeldItem(UISlotHandler currentSlot)
+    public void UpdateHeldItem(UiSlotHandler currentSlot)
     {
-        Item currentActiveItem = currentSlot.item;
+        ScriptableItem currentActiveItem = currentSlot.item;
 
         if (currentlyHeldItem != null && currentActiveItem != null && currentlyHeldItem.itemID == currentActiveItem.itemID)
         {
             currentSlot.inventoryManager.StackInInventory(currentSlot, currentlyHeldItem);
             currentlyHeldItem = null;
-            return
+            return;
         }
 
         if (currentSlot.item != null)
@@ -36,11 +36,11 @@ public class MouseManager : MonoBehaviour
         currentlyHeldItem = currentActiveItem;
     }
 
-    public void PickupFromStack()
+    public void PickupFromStack(UiSlotHandler currentSlot)
     {
-        if (currentlyHeldItem != null && currentlyHeldItem.itemID! - currentSlot.item.itemID)
+        if (currentlyHeldItem != null && currentlyHeldItem.itemID! != currentSlot.item.itemID)
         {
-            return
+            return;
         }
 
         if (currentlyHeldItem == null)
@@ -51,7 +51,7 @@ public class MouseManager : MonoBehaviour
 
         currentlyHeldItem.itemCount++;
         currentSlot.item.itemCount--;
-        currentSlot.itemCountText = currentSlot.item.itemCount.ToString();
+        currentSlot.itemCountText.text = currentSlot.item.itemCount.ToString();
 
         if (currentSlot.item.itemCount <= 0)
         {

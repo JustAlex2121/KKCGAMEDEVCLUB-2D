@@ -20,11 +20,11 @@ public static class ScriptableObjectExtension
     {
         if (scriptableObject == null)
         {
-            Debug.LogError($"ScriptableObject was null. Returning default {typeof(T)}} object."))
+            Debug.LogError($"ScriptableObject was null. Returning default {typeof(T)} object.");
             return (T)ScriptableObject.CreateInstance(typeof(T));
         }
 
-        T instance = UnityEngine.Object.Instantiate(criptableObject);
+        T instance = UnityEngine.Object.Instantiate(scriptableObject);
         instance.name = scriptableObject.name; // remove (Clone) from name
         return instance;
     }

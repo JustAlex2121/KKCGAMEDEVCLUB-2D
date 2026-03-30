@@ -7,10 +7,9 @@ using TMPro;
 
 public class UiSlotHandler : MonoBehaviour, IPointerClickHandler
 {
-
-    public Item item
-    public Image icon
-    public TextMeshProUGUI itemCountText
+    public ScriptableItem item;
+    public Image icon;
+    public TextMeshProUGUI itemCountText;
     public InventoryManager inventoryManager;
 
     public void OnPointerClick(PointerEventData eventData)
@@ -32,7 +31,7 @@ public class UiSlotHandler : MonoBehaviour, IPointerClickHandler
         {
             item = item.Clone();
             icon.sprite = item.itemIcon;
-            itemCountText = item.itemCount.ToString();
+            itemCountText.text = item.itemCount.ToString();
         }
         else
         {
@@ -40,5 +39,4 @@ public class UiSlotHandler : MonoBehaviour, IPointerClickHandler
             itemCountText.text = string.Empty;
         }
     }
-
 }

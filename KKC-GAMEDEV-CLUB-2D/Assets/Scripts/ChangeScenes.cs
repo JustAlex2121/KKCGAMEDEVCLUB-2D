@@ -8,7 +8,8 @@ public class ChangeScenes : MonoBehaviour
 
     public void GoToSceneNumber()
     {
-        SceneManager.LoadScene("SceneName")
+        int sceneNum = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(sceneNum++);
             //SceneName is just a placeholder
      //for the actual name of the Scene you want to use
     }
