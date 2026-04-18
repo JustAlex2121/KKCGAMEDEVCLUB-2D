@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Energy drink
   m_EditorClassIdentifier: 
   itemID: energy Drink
-  itemCount: 3
+  itemCount: 12
   itemIcon: {fileID: -117601332951816804, guid: b0a41a8fb9af85c41b1f47a88cd02aee, type: 3}
