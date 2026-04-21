@@ -13,6 +13,7 @@ public class DeckManager : MonoBehaviour
     {
         //Load all cards from the resources folder
         Card[] cards = Resources.LoadAll<Card>("Cards");
+        Debug.Log("cards");
 
         //Add the loaded cards to the allcards list
         allCards.AddRange(cards);
@@ -32,10 +33,10 @@ public class DeckManager : MonoBehaviour
         handManager.AddCardToHand(nextCard);
         currentIndex = (currentIndex + 1) % allCards.Count;
 
-        HandManager hand = FindFirstObjectByType<HandManager>();
+       /* HandManager hand = FindFirstObjectByType<HandManager>();
         for (int i = 0; i < 6; i++)
         {
             DrawCard(hand);
-        }
+        } */
     }
 }

@@ -5,14 +5,15 @@ using CardClasses;
 
 public class HandManager : MonoBehaviour
 {
+
    public DeckManager DeckManager;
    public GameObject cardPrefab; //Assign card prefab in inspector
 
     public Transform handTransform; //hand position center
-
+    
 
     public float handSpread = -7.5f; //how much hand is spread out
-
+  
     public List<GameObject> cardsInHand = new List<GameObject>(); //hold a list of the card objects in player hand
 
     public float cardSpacing = 150f;
@@ -24,15 +25,15 @@ public class HandManager : MonoBehaviour
     {
         //Spawn the card
         GameObject newCard = Instantiate(cardPrefab, handTransform.position, Quaternion.identity, handTransform);
-        cardsInHand.Add(newCard);
 
         //set the card data of the spawned card
         newCard.GetComponent<CardDisplay>().cardData = cardData;
-
+        cardsInHand.Add(newCard);
+        Debug.Log(cardsInHand[0]);
         UpdateHandVisuals();
     }
 
-    private void UpdateHandVisuals()
+    private void UpdateHandVisuals() 
     {
         int cardCount = cardsInHand.Count;
 
@@ -59,13 +60,16 @@ public class HandManager : MonoBehaviour
     }
 
     //may need for debugging
-    void start()
+    void Start() //Card in the deck
     {
-       // need to add a card to call this function AddCardToHand();
+       // AddCardToHand();
+      //  AddCardToHand();
+      //  AddCardToHand();
     }
-
-    void update()
+    
+   /*  public void AddCardToHand() //Can be updated in the engine editor 
     {
-        UpdateHandVisuals();
-    }
+        //Instaniate the card
+        GameObject newCard = Instantiate(cardPrefab, handTransform.position, Quaternion.identity, handTransform);
+    } */
 }
