@@ -1,20 +1,29 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI; 
 
 public class Credits : MonoBehaviour
 
 {
-    public float scrollSpeed = 40f;
-    private RectTransform rectTransform;
-{
-    void Start()
-    {
-        rectTransform = GetComponent<RectTransform>();
-    }
+    public RectTransform PanelObject;
+    [SerializeField] float scrollSpeed = 50f; // Speed of the scroll
+    [SerializeField] float stopYPositionx; // Y position where scrolling stops
+    public string menuSceneName = "MainMenu"; // Scene to load when finished
 
-    // Update is called once per frame
+    private void Start()
+    {
+        stopYPositionx = PanelObject.rect.height;
+           
+    }
     void Update()
     {
-        rectTransform.anchoredPosition +- Vector2(0, scrollSpeed * Time.deltaTime);
+        // Move the container upward
+        transform.Translate(Vector3.up * scrollSpeed * Time.deltaTime);
+
+        // Check if credits have finished scrolling
+        if (transform.localPosition.y >= stopYPositionx)
+        {
+            SceneManager.LoadScene(menuSceneName);
+        }
     }
 }
