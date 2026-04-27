@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 27f9d0778745e3443b7b778daf9d8f56
+guid: 28f5b9dc0c5098f44914f85a7905dc9f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4912808333508147597
-    second: IMG_1731_0
+      213: 1223782884791994925
+    second: Optimism_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_1731_0
+      name: Optimism_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2000
-        height: 2000
+        width: 321
+        height: 297
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d89f450762dcd2440800000000000000
-      internalID: 4912808333508147597
+      spriteID: d2aca32cc00cbf010800000000000000
+      internalID: 1223782884791994925
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      IMG_1731_0: 4912808333508147597
+      Optimism_0: 1223782884791994925
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
