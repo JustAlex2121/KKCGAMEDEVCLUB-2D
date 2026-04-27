@@ -108,10 +108,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -139,10 +139,10 @@ TextureImporter:
       name: Rib Cobra Sprite Sheet_0
       rect:
         serializedVersion: 2
-        x: 303
-        y: 1307
-        width: 434
-        height: 460
+        x: 0
+        y: 1024
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,10 +161,10 @@ TextureImporter:
       name: Rib Cobra Sprite Sheet_1
       rect:
         serializedVersion: 2
-        x: 1327
-        y: 1306
-        width: 429
-        height: 462
+        x: 1024
+        y: 1024
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,10 +183,10 @@ TextureImporter:
       name: Rib Cobra Sprite Sheet_2
       rect:
         serializedVersion: 2
-        x: 2311
-        y: 1307
-        width: 470
-        height: 459
+        x: 2048
+        y: 1024
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,10 +205,10 @@ TextureImporter:
       name: Rib Cobra Sprite Sheet_3
       rect:
         serializedVersion: 2
-        x: 3341
-        y: 1307
-        width: 463
-        height: 439
+        x: 3072
+        y: 1024
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,10 +227,10 @@ TextureImporter:
       name: Rib Cobra Sprite Sheet_4
       rect:
         serializedVersion: 2
-        x: 4417
-        y: 1307
-        width: 411
-        height: 419
+        x: 4096
+        y: 1024
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -249,10 +249,10 @@ TextureImporter:
       name: Rib Cobra Sprite Sheet_5
       rect:
         serializedVersion: 2
-        x: 5417
-        y: 1307
-        width: 436
-        height: 445
+        x: 5120
+        y: 1024
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,10 +271,10 @@ TextureImporter:
       name: Rib Cobra Sprite Sheet_6
       rect:
         serializedVersion: 2
-        x: 303
-        y: 283
-        width: 434
-        height: 460
+        x: 0
+        y: 0
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -293,10 +293,10 @@ TextureImporter:
       name: Rib Cobra Sprite Sheet_7
       rect:
         serializedVersion: 2
-        x: 1291
-        y: 280
-        width: 531
-        height: 412
+        x: 1024
+        y: 0
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -315,10 +315,10 @@ TextureImporter:
       name: Rib Cobra Sprite Sheet_8
       rect:
         serializedVersion: 2
-        x: 2125
-        y: 280
-        width: 719
-        height: 386
+        x: 2048
+        y: 0
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -337,10 +337,10 @@ TextureImporter:
       name: Rib Cobra Sprite Sheet_9
       rect:
         serializedVersion: 2
-        x: 3205
-        y: 280
-        width: 649
-        height: 165
+        x: 3072
+        y: 0
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -359,10 +359,10 @@ TextureImporter:
       name: Rib Cobra Sprite Sheet_10
       rect:
         serializedVersion: 2
-        x: 4277
-        y: 280
-        width: 582
-        height: 204
+        x: 4096
+        y: 0
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -381,10 +381,10 @@ TextureImporter:
       name: Rib Cobra Sprite Sheet_11
       rect:
         serializedVersion: 2
-        x: 5357
-        y: 279
-        width: 517
-        height: 281
+        x: 5120
+        y: 0
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -403,10 +403,10 @@ TextureImporter:
       name: Rib Cobra Sprite Sheet_12
       rect:
         serializedVersion: 2
-        x: 6449
-        y: 281
-        width: 442
-        height: 385
+        x: 6144
+        y: 0
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -425,7 +425,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 094c2a7476df73246b8e367f4a4788eb
     internalID: 0
     vertices: []
     indices: 

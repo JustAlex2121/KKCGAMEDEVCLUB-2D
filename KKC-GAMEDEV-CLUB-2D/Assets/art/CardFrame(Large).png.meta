@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4e77861c7c355cd4b9b942f864c44053
+guid: f52c5106f578628408bd946b9b007063
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5910253353894353437
-    second: Enveriomentfinal copy_0
+      213: -8303359071369244363
+    second: CardFrame(Large)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -72,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Enveriomentfinal copy_0
+      name: CardFrame(Large)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 5760
-        height: 1080
+        width: 423
+        height: 772
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d1a1f6b8c10750250800000000000000
-      internalID: 5910253353894353437
+      spriteID: 531d48ceaea84cc80800000000000000
+      internalID: -8303359071369244363
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Enveriomentfinal copy_0: 5910253353894353437
+      CardFrame(Large)_0: -8303359071369244363
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
