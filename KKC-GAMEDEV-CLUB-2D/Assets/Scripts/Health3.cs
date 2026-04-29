@@ -4,8 +4,9 @@ using UnityEngine.SceneManagement;
 public class Health3 : MonoBehaviour
 {
     private Ui uiCenter;
-    [SerializeField] int health = 50;
+    [SerializeField] public int health;
     [SerializeField] ParticleSystem particleSys;
+    public int maxHealth = 50;
     //CameraShake cShake;
     
     
@@ -13,7 +14,7 @@ public class Health3 : MonoBehaviour
     void Awake()
     {
 
-
+        health = maxHealth;
         //new
         uiCenter = FindFirstObjectByType<Ui>();
      

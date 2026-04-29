@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 501b08d23f6cf8a40b874ccadc15db4e
+guid: e712e290efdf90c43b945cc9e84ca82d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8235020473752199883
-    second: Health and Mana_0
-  - first:
-      213: -5864585715451667332
-    second: Health and Mana_1
-  - first:
-      213: 3390783083601074615
-    second: Health and Mana_2
+      213: -973891319500289957
+    second: UISquare_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -106,89 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Health and Mana_0
+      name: UISquare_0
       rect:
         serializedVersion: 2
-        x: 26
-        y: 189
-        width: 732
-        height: 109
+        x: 0
+        y: 0
+        width: 1000
+        height: 1000
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bc2a1186d7ba84270800000000000000
-      internalID: 8235020473752199883
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Health and Mana_1
-      rect:
-        serializedVersion: 2
-        x: 69
-        y: 33
-        width: 94
-        height: 154
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c7c5cab1d5ecc9ea0800000000000000
-      internalID: -5864585715451667332
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Health and Mana_2
-      rect:
-        serializedVersion: 2
-        x: 286
-        y: 31
-        width: 94
-        height: 154
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7b91278df3b7e0f20800000000000000
-      internalID: 3390783083601074615
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Health and Mana_3
-      rect:
-        serializedVersion: 2
-        x: 167
-        y: 38
-        width: 120
-        height: 149
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0e05918574eaca040af8764864ebe2fa
-      internalID: -775920679
+      spriteID: b58495b310b0c72f0800000000000000
+      internalID: -973891319500289957
       vertices: []
       indices: 
       edges: []
@@ -197,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: fe2d2f921fc2bdb4abee44cbe23c4004
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -207,10 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Health and Mana_0: 8235020473752199883
-      Health and Mana_1: -5864585715451667332
-      Health and Mana_2: 3390783083601074615
-      Health and Mana_3: -775920679
+      UISquare_0: -973891319500289957
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
