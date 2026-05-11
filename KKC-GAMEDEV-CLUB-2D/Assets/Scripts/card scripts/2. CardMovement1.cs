@@ -37,8 +37,9 @@ public class CardMovement: MonoBehaviour, IDragHandler, IPointerDownHandler, IPo
     void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
-        canvas = GetComponent<Canvas>();
+        canvas = GetComponentInParent<Canvas>();
 
+        GetComponent<RectTransform>().localScale = new Vector3(1,1,1);
         originalScale = rectTransform.localScale;
         originalPosition = rectTransform.localPosition;
         originalRotation = rectTransform.localRotation;

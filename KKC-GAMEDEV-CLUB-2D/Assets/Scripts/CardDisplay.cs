@@ -35,8 +35,9 @@ public class CardDisplay : MonoBehaviour
         
     };*/
 
-    void Start()
+    public void SetCardData(Card Data)
     {
+        cardData = Data;
         UpdateCardDisplay();
     }
 

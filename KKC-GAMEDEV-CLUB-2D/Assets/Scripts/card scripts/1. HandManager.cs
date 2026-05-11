@@ -51,7 +51,7 @@ public class HandManager : MonoBehaviour
 
             float horizontalOffset = (cardSpacing * (i - (cardCount - 1) / 2f));
 
-            float normalizedPosition = (2f * i / (cardCount - 1) - 1f); //Normalize hand position btw -1, 1
+            float normalizedPosition = cardCount > 1 ? (2f * i / (cardCount - 1) - 1f) : 0f; //Normalize hand position btw -1, 1
             float verticalOffset = verticalSpacing * (1 - normalizedPosition * normalizedPosition);
 
             //set Card positions

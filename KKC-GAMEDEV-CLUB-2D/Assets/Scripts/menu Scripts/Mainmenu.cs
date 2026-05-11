@@ -8,6 +8,12 @@ public class Mainmenu : MonoBehaviour
         SceneManager.LoadScene("Mainscene");
     }
 
+    public void OnExitClick()
+    {
+        UnityEditor.EditorApplication.isPlaying = false;
+    }
+
+
     // Update is called once per frame
     void Update()
     {
