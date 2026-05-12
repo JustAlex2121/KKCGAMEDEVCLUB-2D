@@ -53,7 +53,6 @@ public class CardMovement: MonoBehaviour, IDragHandler, IPointerDownHandler, IPo
                 HandleHoverState();
                 break;
             case 2:               
-             if (!Input.GetMouseButton(0)) //Check if mouse button is released
                 HandleDragState();
 
                     break;
@@ -112,10 +111,12 @@ public class CardMovement: MonoBehaviour, IDragHandler, IPointerDownHandler, IPo
         {
             if (RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.GetComponent<RectTransform>(), eventData.position, eventData.pressEventCamera, out Vector2 localPointerPosition))
             {
-                localPointerPosition /= canvas.scaleFactor;
+                //localPointerPosition /= canvas.scaleFactor;
 
-                Vector3 offsetToOriginal = localPointerPosition = originalLocalPointerPosition;
+                Vector3 offsetToOriginal = localPointerPosition - originalLocalPointerPosition;
                 rectTransform.localPosition = originalPanelLocalPosition + offsetToOriginal;
+
+            
 
                 if(rectTransform.localPosition.y > cardPlay.y)
                 {
@@ -144,10 +145,19 @@ public class CardMovement: MonoBehaviour, IDragHandler, IPointerDownHandler, IPo
         rectTransform.localPosition = playPosition;
         rectTransform.localRotation = Quaternion.identity;
 
-        if (Input.mousePosition.y < cardPlay.y)
+        Vector2 localMousePosition = Vector2.zero;
+
+        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            canvas.GetComponent<RectTransform>(),
+            Input.mousePosition,
+            null,
+            out Vector2 localPointerPosition))
         {
-            currentState = 2;
-            playArrow.SetActive(false);
+            if (localMousePosition.y < cardPlay.y)
+            {
+                currentState = 2;
+                playArrow.SetActive(false);
+            }
         }
-    }
+}
 }
