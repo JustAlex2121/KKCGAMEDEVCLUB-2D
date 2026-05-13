@@ -145,13 +145,18 @@ public class CardMovement: MonoBehaviour, IDragHandler, IPointerDownHandler, IPo
         rectTransform.localPosition = playPosition;
         rectTransform.localRotation = Quaternion.identity;
 
-        Vector2 localMousePosition = Vector2.zero;
+        if (!playArrow.activeSelf)
+        {
+            playArrow.SetActive(true);
+        }
+
+        //Vector2 localMousePosition = Vector2.zero;
 
         if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
             canvas.GetComponent<RectTransform>(),
             Input.mousePosition,
             null,
-            out Vector2 localPointerPosition))
+            out Vector2 localMousePosition))
         {
             if (localMousePosition.y < cardPlay.y)
             {
