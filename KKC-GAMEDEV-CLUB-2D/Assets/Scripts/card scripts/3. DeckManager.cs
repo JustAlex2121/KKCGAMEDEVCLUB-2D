@@ -11,14 +11,25 @@ public class DeckManager : MonoBehaviour
 
     void Start()
     {
+        HandManager hand = FindObjectOfType<HandManager>();
+
+        foreach (GameObject card in hand.cardsInHand)
+        {
+            Destroy(card);
+        }
+        hand.cardsInHand.Clear();
+
+
         //Load all cards from the resources folder
         Card[] cards = Resources.LoadAll<Card>("Cards");
         Debug.Log("cards");
 
         //Add the loaded cards to the allcards list
+        allCards.Clear();
         allCards.AddRange(cards);
 
-        HandManager hand = FindObjectOfType<HandManager>();
+        currentIndex = 0;
+
         for (int i = 0; i < 6; i++){
             DrawCard(hand);
         }
