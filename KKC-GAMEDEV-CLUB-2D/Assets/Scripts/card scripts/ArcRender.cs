@@ -7,6 +7,8 @@ public class ArcRender : MonoBehaviour
 
     public GameObject dotPrefab; //The dots.
 
+    public GameObject projectilePrefab; //assign in inspector
+
     public int poolSize = 50; // the size of our dot pool
     private List<GameObject> dotPool = new List<GameObject>(); //the dot pool
     private GameObject arrowInstance; //Holds a reference to the arrow head
@@ -15,6 +17,10 @@ public class ArcRender : MonoBehaviour
     public float arrowAngleAdjustment = 0; //angle the correction for the arrowhead
     public int dotsToSkip = 1; //number if dots to skip to give the arrowhead space.
     private Vector3 arrowDirection; //Holds the position the arrowhead needs to point from
+
+    [HideInInspector] public Vector3 arcStartPos;
+    [HideInInspector] public Vector3 arcMidPoint;
+    [HideInInspector] public Vector3 arcEndPos;
 
     void Awake()
     {
@@ -43,12 +49,22 @@ public class ArcRender : MonoBehaviour
 
         Vector3 startPos = transform.position;
 
-        Debug.Log("startPos" + startPos);
-        Debug.Log("mousePos" + mousePos);
+        Vector3 midpoint = CalculateMidPoint (startPos, mousePos);
 
-        Vector3 midpoint = CalculateMidPoint(startPos, mousePos);
+        arcStartPos = startPos;
+        arcMidPoint = midpoint;
+        arcEndPos =  mousePos;
+
         UpdateArc(startPos, midpoint, mousePos);
         PositionAndRotateArrow(mousePos);
+
+        //Debug.Log("startPos" + startPos);
+        //Debug.Log("mousePos" + mousePos);
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            CheckForEnemyClick();
+        }
     }
 
     void UpdateArc(Vector3 start, Vector3 mid, Vector3 end) //shows the arrows and dots
@@ -95,6 +111,38 @@ public class ArcRender : MonoBehaviour
         arrowInstance.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward); //The same as (0,0,1)
     }
 
+    void CheckForEnemyClick()
+    {
+        if (projectilePrefab == null)
+        {
+            Debug.Log("Projectile prefab not assigned!");
+            return;
+        }
+        
+        
+        
+        
+        RaycastHit2D hit= Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+
+        if (hit.collider != null)
+        {
+            if (hit.collider.CompareTag("Enemy"))
+            {
+                arcEndPos = hit.collider.transform.position;
+                arcMidPoint = CalculateMidPoint(arcStartPos, arcEndPos);
+
+                GameObject projectile = Instantiate(projectilePrefab, arcStartPos, Quaternion.identity);
+                CardProjectile cardProjectile = projectile.GetComponent<CardProjectile>();
+
+                DamageDealer damageDealer = GetComponentInParent<DamageDealer>();
+                int damage = damageDealer != null ? damageDealer.GetDamage() : 10;
+
+                cardProjectile.Launch(arcStartPos, arcMidPoint, arcEndPos, damage);
+
+                Destroy(transform.parent.gameObject);
+            }
+        }
+    }
     Vector3 CalculateMidPoint(Vector3 start, Vector3 end)
     {
         Vector3 midpoint = (start + end) /2;
