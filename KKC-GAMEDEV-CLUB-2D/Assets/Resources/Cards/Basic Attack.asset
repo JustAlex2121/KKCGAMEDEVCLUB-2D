@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 935748a5f0196f74fb5a2b2f51c34bfc, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e4ccc9019833d94eb370660f28e5706, type: 3}
   m_Name: Basic Attack
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+<<<<<<<< HEAD:KKC-GAMEDEV-CLUB-2D/Assets/Resources/Cards/Basic Attack.asset
   cardName: Basic Attack
   cardFlavor: 00000000
   flavorPoints: 1
@@ -19,3 +21,21 @@ MonoBehaviour:
   damageMax: 8
   damageType: 00000000
   cardSprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+========
+  cardName: 
+  cardFlavor: 
+  flavorPoints: 0
+  damageMin: 0
+  damageMax: 0
+  damageType: 
+  cardSprite: {fileID: 0}
+>>>>>>>> main:KKC-GAMEDEV-CLUB-2D/Assets/CardData/Basic Attack.asset
+=======
+  cardName: Hello
+  cardFlavor: 
+  flavorPoints: 1
+  damageMin: 1
+  damageMax: 1
+  damageType: 
+  cardSprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+>>>>>>> main
