@@ -5,7 +5,7 @@ using UnityEngine;
 using Unity.VisualScripting;
 using UnityEditor.PackageManager;
 
-public class ActionSystem : Singleton<ActionSystem>
+public class ActionSystem /*: Singleton<ActionSystem>*/
 {
     private List<GameAction> reactions = null;
     public bool IsPerforming { get; private set; } = false;
@@ -23,9 +23,9 @@ public class ActionSystem : Singleton<ActionSystem>
     {
         performers[typeof(T)] = performer;
     }
-    public Static void detachPerformer<T>() where T : GameAction
+    public static void detachPerformer<T>() where T : GameAction
     {
         performers.Remove(typeof(T));
     }
-public static void SubscribeReac
+    public static void SubscribeReac() { }
 }

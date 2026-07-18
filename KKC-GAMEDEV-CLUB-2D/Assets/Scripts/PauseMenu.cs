@@ -4,12 +4,19 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
    [SerializeField] GameObject pauseMenu;
-
-
+   
    public void Pause()
     {
-        pauseMenu.SetActive(true);
-        Time.timeScale = 0;
+        if (pauseMenu.activeSelf == false) {
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0;
+        }
+        else
+        {
+            pauseMenu.SetActive(false);
+            Time.timeScale = 1;
+        }
+        
     }
 
     public void Home()
