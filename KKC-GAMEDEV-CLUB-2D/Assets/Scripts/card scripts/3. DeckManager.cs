@@ -11,7 +11,7 @@ public class DeckManager : MonoBehaviour
 
     void Start()
     {
-        HandManager hand = FindObjectOfType<HandManager>();
+        HandManager hand = FindFirstObjectByType<HandManager>();
 
         foreach (GameObject card in hand.cardsInHand)
         {
