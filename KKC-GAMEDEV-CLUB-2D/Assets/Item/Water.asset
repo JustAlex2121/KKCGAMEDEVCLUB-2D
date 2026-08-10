@@ -9,13 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e4ccc9019833d94eb370660f28e5706, type: 3}
-  m_Name: Basic Attack
+  m_Script: {fileID: 11500000, guid: eb07ff3ee93977545abc64681f764ac3, type: 3}
+  m_Name: Water
   m_EditorClassIdentifier: 
-  cardName: 
-  cardFlavor: 
-  flavorPoints: 0
-  damageMin: 0
-  damageMax: 0
-  damageType: 
-  cardSprite: {fileID: 0}
+  itemID: Water
+  itemCount: 1
+  itemIcon: {fileID: -2694483669175753256, guid: ab46b019f20a8c64fa297a1a2d7afb21, type: 3}

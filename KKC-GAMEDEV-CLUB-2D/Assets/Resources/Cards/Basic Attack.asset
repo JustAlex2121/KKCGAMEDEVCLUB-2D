@@ -12,10 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e4ccc9019833d94eb370660f28e5706, type: 3}
   m_Name: Basic Attack
   m_EditorClassIdentifier: 
-  cardName: Hello
+<<<<<<<< HEAD:KKC-GAMEDEV-CLUB-2D/Assets/CardData/Basic Attack.asset
+  cardName: 
   cardFlavor: 
-  flavorPoints: 1
-  damageMin: 1
-  damageMax: 1
+  flavorPoints: 0
+  damageMin: 0
+  damageMax: 0
   damageType: 
+  cardSprite: {fileID: 0}
+========
+  cardName: Basic Attack
+  cardFlavor: 00000000
+  flavorPoints: 1
+  damageMin: 2
+  damageMax: 8
+  damageType: 00000000
   cardSprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+>>>>>>>> Pause-Branch:KKC-GAMEDEV-CLUB-2D/Assets/Resources/Cards/Basic Attack.asset

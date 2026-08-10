@@ -19,31 +19,32 @@ public class CardDisplay : MonoBehaviour
     //Packages.Card cardData;
     public Card cardData;
 
-    private Color[] cardColors =
+   /* private Color[] cardColors =
     {
         Color.red,    //Spicy
         Color.yellow, //Salty
         Color.blue    //Sweet
         
-    };
+    };*/
 
-    private Color[] typeColors =
+    /*private Color[] typeColors =
    {
         Color.magenta,  //Spicy
         Color.black,    //Salty
         Color.white    //Sweet
         
-    };
+    };*/
 
-    void Start()
+    public void SetCardData(Card Data)
     {
+        cardData = Data;
         UpdateCardDisplay();
     }
 
     public void UpdateCardDisplay()
     {
         //Update Card Image color based on Damage Type
-        cardImage.color = cardColors[(int)cardData.cardFlavor[0]];
+      //  cardImage.color = cardColors[(int)cardData.cardFlavor[0]];
 
         nameText.text = cardData.cardName;
         flavorPointsText.text = cardData.flavorPoints.ToString();
@@ -55,7 +56,7 @@ public class CardDisplay : MonoBehaviour
             if (i < cardData.cardFlavor.Count)
             {
                 typeImages[i].gameObject.SetActive(true);
-                typeImages[i].color = typeColors[(int)cardData.cardFlavor[i]];
+               // typeImages[i].color = typeColors[(int)cardData.cardFlavor[i]];
             }
             else
             {
