@@ -132,6 +132,7 @@ public class ArcRender : MonoBehaviour
                 arcMidPoint = CalculateMidPoint(arcStartPos, arcEndPos);
 
                 GameObject projectile = Instantiate(projectilePrefab, arcStartPos, Quaternion.identity);
+                Debug.Log("Projectile instantiated at: " + arcStartPos);
                 CardProjectile cardProjectile = projectile.GetComponent<CardProjectile>();
 
                 DamageDealer damageDealer = GetComponentInParent<DamageDealer>();
