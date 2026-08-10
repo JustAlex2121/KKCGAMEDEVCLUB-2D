@@ -583,10 +583,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrowPrefab: {fileID: 4068555901107530463, guid: 657f55a4fbb7b2946ba05e6a5834b467, type: 3}
   dotPrefab: {fileID: 4890771233595052934, guid: 315de0c5ecf4c83438229e3596165af5, type: 3}
+  projectilePrefab: {fileID: 7543179841061379269, guid: 38619cc1e841838498eb7e08f584c940, type: 3}
   poolSize: 100
   spacing: 0.5
   arrowAngleAdjustment: 180
   dotsToSkip: 1
+  arcStartPos: {x: 0, y: 0, z: 0}
+  arcMidPoint: {x: 0, y: 0, z: 0}
+  arcEndPos: {x: 0, y: 0, z: 0}
 --- !u!1 &6627792697588219775
 GameObject:
   m_ObjectHideFlags: 0
