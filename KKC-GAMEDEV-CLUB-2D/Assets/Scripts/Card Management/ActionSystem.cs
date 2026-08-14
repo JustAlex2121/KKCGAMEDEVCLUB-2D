@@ -79,10 +79,10 @@ public class ActionSystem : Singleton<ActionSystem>
         else preformers.Add(type, wrappedPerformer);
     }
 
-    public static void DetachPerformer<T>() where T : GameAction
+    public static void DetachPerformer<T>(GameAction reaction) where T : GameAction
     {
         Type type = typeof(T);
-        if (preformers.ContainsKey(type)) preformers.Remove(type) ;
+        if (preformers.ContainsKey(type)) preformers.Remove(type);
 
     }
 
