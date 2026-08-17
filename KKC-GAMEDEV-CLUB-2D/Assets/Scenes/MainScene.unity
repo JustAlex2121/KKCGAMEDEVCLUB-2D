@@ -1800,7 +1800,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DeckManager: {fileID: 0}
-  cardPrefab: {fileID: 7631706574147347091, guid: f91a004b58318bc46ad031aef8ad8997, type: 3}
+  cardPrefab: {fileID: 7631706574147347091, guid: 1a3f79d52c245e641a3cc3dc90c4ea43, type: 3}
   handTransform: {fileID: 1697742080}
   handSpread: -7.5
   cardsInHand: []
@@ -1818,7 +1818,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b21613f7aecaf0f4a9b4a9153d9bbc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allCards: []
+  allCards:
+  - {fileID: 11400000, guid: d0bc09b445f50c146b3d866762d32c31, type: 2}
+  - {fileID: 11400000, guid: 965bd8f613f7c834fa25c1e9e61c0b43, type: 2}
 --- !u!1 &1111632941
 GameObject:
   m_ObjectHideFlags: 0
@@ -1982,8 +1984,8 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 0039d57191c531944a1b64ea91579f7d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.52
+  m_Pitch: 0.08
   Loop: 1
   Mute: 0
   Spatialize: 0
@@ -2056,7 +2058,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.754
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -3100,7 +3102,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 4.0599976, y: -761.05}
+  m_AnchoredPosition: {x: 4.0600586, y: -761.05}
   m_SizeDelta: {x: 0.01, y: 0.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1849961878

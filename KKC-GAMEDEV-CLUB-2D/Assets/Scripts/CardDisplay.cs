@@ -43,6 +43,7 @@ public class CardDisplay : MonoBehaviour
 
     public void UpdateCardDisplay()
     {
+        cardImage.sprite = cardData.cardSprite;
         //Update Card Image color based on Damage Type
       //  cardImage.color = cardColors[(int)cardData.cardFlavor[0]];
 

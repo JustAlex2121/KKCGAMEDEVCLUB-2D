@@ -7,10 +7,10 @@ public class CardProjectile : MonoBehaviour
     private Vector3 targetPos;
     private float speed = 1f;
     private float t = 0f;
-    private int damage;
+    private float damage;
     private bool isLaunched = false;
 
-    public void Launch(Vector3 start, Vector3 control, Vector3 target, int cardDamage)
+    public void Launch(Vector3 start, Vector3 control, Vector3 target, float cardDamage)
     {
         startPos = start;
         controlPoint = control;
