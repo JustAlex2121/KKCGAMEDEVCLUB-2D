@@ -11,8 +11,7 @@ public class GameManager : MonoBehaviour
     private int difficulty;
 
     public OptionManager optionManager { get; private set; }
-    public InventoryManager inventoryManager { get; private set; }
-    public AudioManager audioManager { get; private set; }
+   public AudioManager audioManager { get; private set; }
     public DeckManager deckManager { get; private set; }
 
     public GameState State;
@@ -35,8 +34,7 @@ public class GameManager : MonoBehaviour
     private void InitializeManagers()
     {
         optionManager = GetComponent<OptionManager>();
-        inventoryManager = GetComponent<InventoryManager>();
-        deckManager = GetComponent<DeckManager>();
+       deckManager = GetComponent<DeckManager>();
         audioManager = GetComponent<AudioManager>();
 
         if (optionManager == null)
@@ -54,20 +52,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (inventoryManager == null)
-        {
-            GameObject prefab = Resources.Load<GameObject>("Prefabs/InventoryManager");
-            if (prefab == null)
-            {
-                Debug.LogError("InventoryManager prefab not found in Resources/Prefabs.");
-
-            }
-            else
-            {
-                Instantiate(prefab, transform.position, Quaternion.identity, transform);
-                inventoryManager = GetComponentInChildren<InventoryManager>();
-            }
-        }
+        
 
         if (audioManager == null)
         {
@@ -108,7 +93,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        UpdateGameState(GameState.Inventory);
+        UpdateGameState(GameState.Title);
     }
     public void UpdateGameState(GameState newState)
     {
@@ -116,11 +101,11 @@ public class GameManager : MonoBehaviour
 
         switch (newState)
         {
-            case GameState.Inventory:
-                //HandleInventory();
+            case GameState.Title:
+                HandleTitle();
                 break;
             case GameState.PlayerTurn:
-               // HandlePlayerTurn();
+                //HandlePlayerTurn();
                 break;
             case GameState.EnemyTurn:
                // HandleEnemyTurn();  
@@ -138,15 +123,15 @@ public class GameManager : MonoBehaviour
         OnGameStateChanged?.Invoke(newState);
 
     }
-    private void HandleInventory()
+    private void HandleTitle()
     {
-        // Implement Inventory logic here
+        // Implement Title logic here
     }
 
 }
 public enum GameState
 {
-    Inventory,
+    Title,
     PlayerTurn,
     EnemyTurn,
     Victory,
