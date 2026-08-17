@@ -26,7 +26,7 @@ public class UIManager : MonoBehaviour
     {
         _TitlePanel.SetActive(state==GameState.Title);
     }
-    void OnButtonClicked()
+    public void OnButtonClicked()
     { GameManager.Instance.UpdateGameState(GameState.PlayerTurn); }
   
 
