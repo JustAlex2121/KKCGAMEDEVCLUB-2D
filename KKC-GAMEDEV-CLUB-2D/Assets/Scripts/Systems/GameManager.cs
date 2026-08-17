@@ -93,7 +93,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        UpdateGameState(GameState.MainMenu);
+        UpdateGameState(GameState.Title);
     }
     public void UpdateGameState(GameState newState)
     {
@@ -101,11 +101,11 @@ public class GameManager : MonoBehaviour
 
         switch (newState)
         {
-            case GameState.MainMenu:
-                //HandleMainMenu();
+            case GameState.Title:
+                HandleTitle();
                 break;
             case GameState.PlayerTurn:
-               // HandlePlayerTurn();
+                //HandlePlayerTurn();
                 break;
             case GameState.EnemyTurn:
                // HandleEnemyTurn();  
@@ -123,15 +123,15 @@ public class GameManager : MonoBehaviour
         OnGameStateChanged?.Invoke(newState);
 
     }
-    private void HandleMainMenu()
+    private void HandleTitle()
     {
-        // Implement MainMenu logic here
+        // Implement Title logic here
     }
 
 }
 public enum GameState
 {
-    MainMenu,
+    Title,
     PlayerTurn,
     EnemyTurn,
     Victory,
