@@ -177,7 +177,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: up to 8 damage
+  m_text: '5-12 damage
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -898,7 +900,7 @@ GameObject:
   - component: {fileID: 5692619617996980284}
   - component: {fileID: 4806096288359912959}
   m_Layer: 0
-  m_Name: Sweet
+  m_Name: Suga
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -943,7 +945,7 @@ MonoBehaviour:
   damageText: {fileID: 7298902205106780546}
   typeImages:
   - {fileID: 0}
-  cardData: {fileID: 11400000, guid: 4881c0d67ad9aea4d99a3d38f2f0d64e, type: 2}
+  cardData: {fileID: 11400000, guid: 7a5b16a2beecf704ab78bde843b7cbe1, type: 2}
 --- !u!61 &5692619617996980284
 BoxCollider2D:
   m_ObjectHideFlags: 0

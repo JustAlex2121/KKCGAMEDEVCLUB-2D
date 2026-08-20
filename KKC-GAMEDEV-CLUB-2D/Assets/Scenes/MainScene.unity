@@ -2206,11 +2206,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dae525d51486164abf0bc8c39cffbaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeckManager: {fileID: 0}
-  cardPrefab: {fileID: 7631706574147347091, guid: 1a3f79d52c245e641a3cc3dc90c4ea43, type: 3}
+  DeckManager: {fileID: 1107687179}
+  cardPrefabs:
+  - {fileID: 7631706574147347091, guid: f91a004b58318bc46ad031aef8ad8997, type: 3}
+  - {fileID: 7631706574147347091, guid: 1a3f79d52c245e641a3cc3dc90c4ea43, type: 3}
+  - {fileID: 7631706574147347091, guid: 9d1db8fdb277d3d4f895bc1fc0d800ac, type: 3}
+  - {fileID: 7631706574147347091, guid: 549f2ce9b3a2f044d87e0b494e0fa3fe, type: 3}
+  - {fileID: 7631706574147347091, guid: ce63a5e7f1d13a44d99e7d3d474939e6, type: 3}
   handTransform: {fileID: 1697742080}
   handSpread: -7.5
-  cardsInHand: []
+  cardsInHand:
+  - {fileID: 7631706574147347091, guid: 1a3f79d52c245e641a3cc3dc90c4ea43, type: 3}
+  - {fileID: 7631706574147347091, guid: f91a004b58318bc46ad031aef8ad8997, type: 3}
+  - {fileID: 7631706574147347091, guid: 9d1db8fdb277d3d4f895bc1fc0d800ac, type: 3}
+  - {fileID: 7631706574147347091, guid: 549f2ce9b3a2f044d87e0b494e0fa3fe, type: 3}
+  - {fileID: 7631706574147347091, guid: ce63a5e7f1d13a44d99e7d3d474939e6, type: 3}
   cardSpacing: 3
   verticalSpacing: 1.5
 --- !u!114 &1107687179
@@ -2226,8 +2236,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allCards:
-  - {fileID: 11400000, guid: d0bc09b445f50c146b3d866762d32c31, type: 2}
-  - {fileID: 11400000, guid: 965bd8f613f7c834fa25c1e9e61c0b43, type: 2}
+  - {fileID: 11400000, guid: 5448475ee6e7a764eb7da4c429bc550f, type: 2}
+  - {fileID: 11400000, guid: 7a9b7939ac0e76e41beec2b9ee4e05b6, type: 2}
+  - {fileID: 11400000, guid: c7341154fb25d5443bd65a92a641ef3a, type: 2}
+  - {fileID: 11400000, guid: 52de2789e5afbed499f5eaf024f4f211, type: 2}
+  - {fileID: 11400000, guid: 7a5b16a2beecf704ab78bde843b7cbe1, type: 2}
 --- !u!1 &1111632941
 GameObject:
   m_ObjectHideFlags: 0
@@ -3966,7 +3979,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1911789354
 RectTransform:
   m_ObjectHideFlags: 0

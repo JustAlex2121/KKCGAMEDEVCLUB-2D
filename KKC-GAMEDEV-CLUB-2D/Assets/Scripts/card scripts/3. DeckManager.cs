@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using CardClasses;
@@ -13,10 +13,7 @@ public class DeckManager : MonoBehaviour
     {
         HandManager hand = FindFirstObjectByType<HandManager>();
 
-        foreach (GameObject card in hand.cardsInHand)
-        {
-            Destroy(card);
-        }
+        
         hand.cardsInHand.Clear();
 
 
@@ -28,10 +25,23 @@ public class DeckManager : MonoBehaviour
         allCards.Clear();
         allCards.AddRange(cards);
 
+        ShuffleDeck();
+
         currentIndex = 0;
 
         for (int i = 0; i < 6; i++){
             DrawCard(hand);
+        }
+    }
+
+    private void ShuffleDeck()
+    {
+        for (int i = 0; i < allCards.Count; i++)
+        {
+            Card temp = allCards[i];
+            int randomIndex = Random.Range(0, allCards.Count);
+            allCards[i] = allCards[randomIndex];
+            allCards[randomIndex] = temp;
         }
     }
 
