@@ -7,10 +7,10 @@ public class CardProjectile : MonoBehaviour
     private Vector3 targetPos;
     private float speed = 1f;
     private float t = 0f;
-    private int damage;
+    private float damage;
     private bool isLaunched = false;
 
-    public void Launch(Vector3 start, Vector3 control, Vector3 target, int cardDamage)
+    public void Launch(Vector3 start, Vector3 control, Vector3 target, float cardDamage)
     {
         startPos = start;
         controlPoint = control;
@@ -26,25 +26,42 @@ public class CardProjectile : MonoBehaviour
         // Move along the bezier curve
         t += Time.deltaTime * speed;
         t = Mathf.Clamp01(t);
-
-        // Calculate position on arc
+        
         transform.position = QuadraticBezierPoint(startPos, controlPoint, targetPos, t);
 
-        // When it reaches the target
+        Debug.Log("Projectile position: " + transform.position + ", t: " + t);
+        Debug.Log("Target position: " + targetPos);
+
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 2f);
+        foreach (Collider2D hit in hits)
+        {
+            Debug.Log("Found collider:" + hit.gameObject.name);
+            if (hit.CompareTag("Enemy"))
+            {
+                Debug.Log("Hit an Enemy! Dealing " + damage + " damage");
+                EnemyBehavior enemy = hit.GetComponent<EnemyBehavior>();
+                if (enemy != null) enemy.TakeDamage(damage);
+                Destroy(gameObject);
+                return;
+           }
+        }
         if (t >= 1f)
         {
-            Debug.Log("Card dealt " + damage + " damage!");
+            Debug.Log("Projectile reached the target position without hitting an enemy.");
             Destroy(gameObject);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (!isLaunched) return;
+        Debug.Log("Hit something" + other.gameObject.name);
         if (other.CompareTag("Enemy"))
         {
-            Debug.Log("Hit" + other.gameObject.name + "for" + damage + "damage");
-            //TODO: uncomment when one of you fuckers finish making the health script
-            //other.Getcomponent<EnemyHealth>().TakeDamage(Damage);
+            Debug.Log("Hit an enemy! Dealing " + damage + " damage.");
+            EnemyBehavior enemy = other.GetComponent<EnemyBehavior>();
+            if (enemy == null) Debug.Log("EnemyBehavior not found!");
+            else enemy.TakeDamage(damage);
             Destroy(gameObject);
         }
     }

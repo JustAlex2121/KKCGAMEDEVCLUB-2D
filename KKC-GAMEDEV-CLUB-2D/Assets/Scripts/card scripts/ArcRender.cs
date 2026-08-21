@@ -132,12 +132,27 @@ public class ArcRender : MonoBehaviour
                 arcMidPoint = CalculateMidPoint(arcStartPos, arcEndPos);
 
                 GameObject projectile = Instantiate(projectilePrefab, arcStartPos, Quaternion.identity);
+                Debug.Log("Projectile instantiated at: " + arcStartPos);
                 CardProjectile cardProjectile = projectile.GetComponent<CardProjectile>();
 
-                DamageDealer damageDealer = GetComponentInParent<DamageDealer>();
-                int damage = damageDealer != null ? damageDealer.GetDamage() : 10;
+                 
+
+                CardDisplay cardDisplay = GetComponentInParent<CardDisplay>();
+                float damage = 10f; //default 
+                if (cardDisplay != null && cardDisplay.cardData != null)
+                {
+                    damage = Random.Range(cardDisplay.cardData.damageMin, cardDisplay.cardData.damageMax + 1);
+                    Debug.Log("Card damage:" + damage);
+                }
 
                 cardProjectile.Launch(arcStartPos, arcMidPoint, arcEndPos, damage);
+
+                FlavorPointManager flavorManager = FindObjectOfType<FlavorPointManager>();
+                if (flavorManager != null && cardDisplay != null && cardDisplay.cardData != null)
+                {
+                    flavorManager.CurFlav -= cardDisplay.cardData.flavorPoints;
+                    flavorManager.UpdateFlavorAmount();
+                }
 
                 Destroy(transform.parent.gameObject);
             }

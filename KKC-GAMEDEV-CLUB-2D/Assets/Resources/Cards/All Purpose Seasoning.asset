@@ -9,13 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 935748a5f0196f74fb5a2b2f51c34bfc, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e4ccc9019833d94eb370660f28e5706, type: 3}
   m_Name: All Purpose Seasoning
   m_EditorClassIdentifier: 
-  cardName: All Purpose Seasoning
-  cardFlavor: 00000000
-  flavorPoints: 1
-  damageMin: 4
-  damageMax: 4
-  damageType: 00000000
-  cardSprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  cardName: 'All purpose '
+  cardFlavor: 
+  flavorPoints: 3
+  damageMin: 11
+  damageMax: 20
+  damageType: 
+  cardSprite: {fileID: 6405474885964148421, guid: 9c2c4866f69f941429dbfe5fb6d4de22, type: 3}
