@@ -15,7 +15,7 @@ MonoBehaviour:
   cardName: Chilli powder
   cardFlavor: 0000000000000000
   flavorPoints: 2
-  damageMin: 5
-  damageMax: 12
+  damageMin: 7
+  damageMax: 15
   damageType: 
   cardSprite: {fileID: -7739417412104074580, guid: 0ed6158cff2fbab4eb99964e1dd134c7, type: 3}

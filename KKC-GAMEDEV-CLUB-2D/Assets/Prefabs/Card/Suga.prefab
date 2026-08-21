@@ -177,7 +177,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '5-12 damage
+  m_text: '14-20 damage
 
 '
   m_isRightToLeft: 0

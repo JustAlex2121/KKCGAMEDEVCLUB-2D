@@ -147,6 +147,13 @@ public class ArcRender : MonoBehaviour
 
                 cardProjectile.Launch(arcStartPos, arcMidPoint, arcEndPos, damage);
 
+                FlavorPointManager flavorManager = FindObjectOfType<FlavorPointManager>();
+                if (flavorManager != null && cardDisplay != null && cardDisplay.cardData != null)
+                {
+                    flavorManager.CurFlav -= cardDisplay.cardData.flavorPoints;
+                    flavorManager.UpdateFlavorAmount();
+                }
+
                 Destroy(transform.parent.gameObject);
             }
         }

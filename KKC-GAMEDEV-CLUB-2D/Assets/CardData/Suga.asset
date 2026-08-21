@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Suga
   m_EditorClassIdentifier: 
   cardName: Suga
-  cardFlavor: 0000000000000000
-  flavorPoints: 2
-  damageMin: 5
-  damageMax: 12
+  cardFlavor: 000000000000000000000000
+  flavorPoints: 3
+  damageMin: 14
+  damageMax: 20
   damageType: 
   cardSprite: {fileID: 943231683519144238, guid: 10af6039bea901b4ab3a6d042e3b3de9, type: 3}
