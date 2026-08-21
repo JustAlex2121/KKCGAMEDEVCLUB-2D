@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour
                 HandleTitle();
                 break;
             case GameState.PlayerTurn:
-                //HandlePlayerTurn();
+                HandlePlayerTurn();
                 break;
             case GameState.EnemyTurn:
                // HandleEnemyTurn();  
@@ -127,7 +127,10 @@ public class GameManager : MonoBehaviour
     {
         // Implement Title logic here
     }
-
+    private void HandlePlayerTurn()
+    {
+        // Implement Title logic here
+    }
 }
 public enum GameState
 {

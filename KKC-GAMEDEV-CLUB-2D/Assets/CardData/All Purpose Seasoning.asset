@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e4ccc9019833d94eb370660f28e5706, type: 3}
   m_Name: All Purpose Seasoning
   m_EditorClassIdentifier: 
-  cardName: 'All purpose '
-  cardFlavor: 
+  cardName: 'All Purpose Seasoning  '
+  cardFlavor: 000000000000000000000000
   flavorPoints: 3
   damageMin: 11
-  damageMax: 20
+  damageMax: 21
   damageType: 
   cardSprite: {fileID: 6405474885964148421, guid: 9c2c4866f69f941429dbfe5fb6d4de22, type: 3}

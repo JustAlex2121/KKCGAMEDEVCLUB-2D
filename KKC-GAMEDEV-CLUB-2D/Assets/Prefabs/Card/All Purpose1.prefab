@@ -898,7 +898,7 @@ GameObject:
   - component: {fileID: 5692619617996980284}
   - component: {fileID: 4806096288359912959}
   m_Layer: 0
-  m_Name: Attack
+  m_Name: All Purpose1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -943,7 +943,7 @@ MonoBehaviour:
   damageText: {fileID: 7298902205106780546}
   typeImages:
   - {fileID: 0}
-  cardData: {fileID: 11400000, guid: 5448475ee6e7a764eb7da4c429bc550f, type: 2}
+  cardData: {fileID: 11400000, guid: 7a9b7939ac0e76e41beec2b9ee4e05b6, type: 2}
 --- !u!61 &5692619617996980284
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1209,7 +1209,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -7008412969330441016, guid: b70ee2ab136bfb44f83225858e59ab3a, type: 3}
+  m_Sprite: {fileID: 6405474885964148421, guid: 9c2c4866f69f941429dbfe5fb6d4de22, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

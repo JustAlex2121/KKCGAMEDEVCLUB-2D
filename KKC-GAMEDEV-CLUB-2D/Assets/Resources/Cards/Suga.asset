@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e4ccc9019833d94eb370660f28e5706, type: 3}
-  m_Name: All Purpose Seasoning
+  m_Name: Suga
   m_EditorClassIdentifier: 
-  cardName: 'All purpose '
-  cardFlavor: 
+  cardName: 
+  cardFlavor: 000000000000000000000000
   flavorPoints: 3
-  damageMin: 11
+  damageMin: 14
   damageMax: 20
   damageType: 
-  cardSprite: {fileID: 6405474885964148421, guid: 9c2c4866f69f941429dbfe5fb6d4de22, type: 3}
+  cardSprite: {fileID: 943231683519144238, guid: 10af6039bea901b4ab3a6d042e3b3de9, type: 3}

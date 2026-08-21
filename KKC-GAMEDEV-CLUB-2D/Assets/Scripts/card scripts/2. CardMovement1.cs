@@ -120,9 +120,29 @@ public class CardMovement: MonoBehaviour, IDragHandler, IPointerDownHandler, IPo
 
                 if(rectTransform.localPosition.y > cardPlay.y)
                 {
+                    FlavorPointManager flavorManager = FindObjectOfType<FlavorPointManager>();
+                    CardDisplay cardDisplay = GetComponent<CardDisplay>();
+
+                    if (flavorManager != null && cardDisplay != null && cardDisplay.cardData != null)
+                    {
+                        if (flavorManager.CurFlav >= cardDisplay.cardData.flavorPoints)
+                        {
+                            currentState = 3;
+                            playArrow.SetActive(true);
+                            rectTransform.localPosition = playPosition;
+                        }
+                        else
+                        {
+                            Debug.Log("Not enough flavor points!");
+                            TransitionToState0();
+                        }
+                    }
+                else
+                {
                     currentState = 3;
                     playArrow.SetActive(true);
-                    rectTransform.localPosition = playPosition;
+                    rectTransform.localPosition = playPosition;       
+                }
                 }
             }
 
@@ -164,5 +184,5 @@ public class CardMovement: MonoBehaviour, IDragHandler, IPointerDownHandler, IPo
                 playArrow.SetActive(false);
             }
         }
-}
+    }
 }
