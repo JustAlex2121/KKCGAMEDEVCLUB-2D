@@ -1386,6 +1386,7 @@ MonoBehaviour:
   HitPoints: 0
   MaxHitPoints: 50
   healthBar: {fileID: 1995184809}
+  attackDamage: 10
 --- !u!1 &750024791
 GameObject:
   m_ObjectHideFlags: 0
