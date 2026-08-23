@@ -17,9 +17,14 @@ public class Health3 : MonoBehaviour
         health = maxHealth;
         //new
         uiCenter = FindFirstObjectByType<Ui>();
+        
+        if (uiCenter != null)
+        {
+            UpdateHealth(this.tag);
+        }
      
         // new
-        UpdateHealth(this.tag);
+        //UpdateHealth(this.tag);
         //cShake = FindFirstObjectByType<CameraShake>();
        
     }
@@ -69,7 +74,8 @@ public class Health3 : MonoBehaviour
 
     void UpdateHealth(string tag)
     {
-        
+        if (uiCenter == null) return;
+
         if (tag == "Player")
         {
             uiCenter.changeHealth(health);
