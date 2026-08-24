@@ -7,7 +7,7 @@ public class HandManager : MonoBehaviour
 {
 
    public DeckManager DeckManager;
-   public GameObject cardPrefab; //Assign card prefab in inspector
+   public List<GameObject> cardPrefabs; //Assign card prefab in inspector
 
     public Transform handTransform; //hand position center
     
@@ -20,14 +20,36 @@ public class HandManager : MonoBehaviour
 
     public float verticalSpacing = 100f;
 
+    public List<GameObject> GetCardsInHand()
+    {
+        return cardsInHand;
+    }
 
     public void AddCardToHand(Card cardData)
     {
+        if (cardPrefabs == null || cardPrefabs.Count == 0)
+        {
+            Debug.LogError("Card prefabs not assigned in HandManager.");
+            return;
+        }
+        
         //Spawn the card
-        GameObject newCard = Instantiate(cardPrefab, handTransform.position, Quaternion.identity, handTransform);
+        Debug.Log("adding card: " + cardData.cardName);
+        GameObject matchingPrefab = cardPrefabs[0];
+        foreach (GameObject prefab in cardPrefabs)
+        {
+            CardDisplay display = prefab.GetComponent<CardDisplay>();
+            Debug.Log("checking prefab: " + prefab.name + "card:" + (display?.cardData?.cardName ?? "null"));
+            if (display != null && display.cardData == cardData)
+            {
+                matchingPrefab = prefab;
+                break;
+            }
+        }
+        GameObject newCard = Instantiate(matchingPrefab, handTransform.position, Quaternion.identity, handTransform);
 
         //set the card data of the spawned card
-        newCard.GetComponent<CardDisplay>().cardData = cardData;
+        newCard.GetComponent<CardDisplay>().SetCardData(cardData);
         cardsInHand.Add(newCard);
         Debug.Log(cardsInHand[0]);
         UpdateHandVisuals();

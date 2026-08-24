@@ -943,7 +943,7 @@ MonoBehaviour:
   damageText: {fileID: 7298902205106780546}
   typeImages:
   - {fileID: 0}
-  cardData: {fileID: 11400000, guid: 965bd8f613f7c834fa25c1e9e61c0b43, type: 2}
+  cardData: {fileID: 11400000, guid: 7a9b7939ac0e76e41beec2b9ee4e05b6, type: 2}
 --- !u!61 &5692619617996980284
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -43,26 +43,32 @@ public class CardDisplay : MonoBehaviour
 
     public void UpdateCardDisplay()
     {
-        cardImage.sprite = cardData.cardSprite;
-        //Update Card Image color based on Damage Type
-      //  cardImage.color = cardColors[(int)cardData.cardFlavor[0]];
+       if (cardData == null) return;
 
-        nameText.text = cardData.cardName;
+    if (cardData.cardSprite != null && cardImage != null)
+        cardImage.sprite = cardData.cardSprite;
+
+    if (nameText != null)
+        nameText.text = cardData.cardName ?? "";
+    
+    if (flavorPointsText != null)
         flavorPointsText.text = cardData.flavorPoints.ToString();
+    
+    if (damageText != null)
         damageText.text = $"{cardData.damageMin} - {cardData.damageMax}";
 
-        //Update Card Type Image
+    if (typeImages != null)
+    {
         for (int i = 0; i < typeImages.Length; i++)
         {
+           if (typeImages[i] == null) continue;
+           
             if (i < cardData.cardFlavor.Count)
-            {
                 typeImages[i].gameObject.SetActive(true);
-               // typeImages[i].color = typeColors[(int)cardData.cardFlavor[i]];
-            }
             else
-            {
                 typeImages[i].gameObject.SetActive(false);
-            }
         }
     }
+}
+
 }

@@ -21,7 +21,6 @@ public class Health3 : MonoBehaviour
         // new
         UpdateHealth(this.tag);
         //cShake = FindFirstObjectByType<CameraShake>();
-       
     }
 
   
