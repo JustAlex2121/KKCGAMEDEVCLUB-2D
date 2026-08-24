@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e4ccc9019833d94eb370660f28e5706, type: 3}
   m_Name: Suga
   m_EditorClassIdentifier: 
-  cardName: Suga
+  cardName: Sugar
   cardFlavor: 000000000000000000000000
   flavorPoints: 3
   damageMin: 14

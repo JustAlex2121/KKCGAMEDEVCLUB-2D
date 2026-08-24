@@ -10,9 +10,5 @@ public abstract class GameAction
     public List<GameAction> PostReactions { get; private set; } = new();
 }
 
-// Update is called once per frame
-/*void Update()
-{
-        
-}*/
+
 

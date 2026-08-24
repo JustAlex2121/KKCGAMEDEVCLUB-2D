@@ -13,6 +13,7 @@ public class DragUIObject : MonoBehaviour, IDragHandler, IPointerDownHandler //T
 
     void Awake()
     {
+        if (!CanInteract()) return;
         rectTransform = GetComponent<RectTransform>(); //Get the RectTransform component of the attached GameObject
         canvas = GetComponentInParent<Canvas>(); //Get the Canvas component of the attached GameObject
     }
@@ -25,6 +26,7 @@ public class DragUIObject : MonoBehaviour, IDragHandler, IPointerDownHandler //T
 
     public void OnDrag(PointerEventData eventData) //This is inherited from the IDragHandler class referenced above
     {
+        if (!CanInteract()) return;
         if (RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.GetComponent<RectTransform>(), eventData.position, eventData.pressEventCamera, out Vector2 localPointerPosition))
         {
             localPointerPosition /= canvas.scaleFactor;
@@ -37,4 +39,17 @@ public class DragUIObject : MonoBehaviour, IDragHandler, IPointerDownHandler //T
             // Debug.Log($"Drag - LocalPointerPosition: {localPointerPosition}, Offset: {offsetToOriginal}, New Position: {rectTransform.localPosition}"); //Comment out this line if not debugging an issue, otherwise it will flood the console unnecessarily
         }
     }
+
+
+    private bool CanInteract()
+    {
+        return GameManager.Instance != null && GameManager.Instance.State == GameState.PlayerTurn;
+    }
 }
+
+
+
+  
+  
+
+
