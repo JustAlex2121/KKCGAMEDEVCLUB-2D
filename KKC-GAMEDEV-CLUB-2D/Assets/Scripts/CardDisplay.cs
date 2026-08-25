@@ -43,7 +43,13 @@ public class CardDisplay : MonoBehaviour
 
     public void UpdateCardDisplay()
     {
+<<<<<<< Updated upstream
        if (cardData == null) return;
+=======
+        cardImage.sprite = cardData.cardSprite;
+        //Update Card Image color based on Damage Type
+      //  cardImage.color = cardColors[(int)cardData.cardFlavor[0]];
+>>>>>>> Stashed changes
 
     if (cardData.cardSprite != null && cardImage != null)
         cardImage.sprite = cardData.cardSprite;

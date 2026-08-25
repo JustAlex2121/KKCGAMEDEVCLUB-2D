@@ -15,7 +15,14 @@ MonoBehaviour:
   cardName: 
   cardFlavor: 00000000
   flavorPoints: 2
+<<<<<<< Updated upstream
   damageMin: 7
   damageMax: 14
   damageType: 
   cardSprite: {fileID: -7739417412104074580, guid: 0ed6158cff2fbab4eb99964e1dd134c7, type: 3}
+=======
+  damageMin: 5
+  damageMax: 12
+  damageType: 
+  cardSprite: {fileID: 0}
+>>>>>>> Stashed changes

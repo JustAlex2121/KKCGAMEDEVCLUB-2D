@@ -1157,17 +1157,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 583201452}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 14.047422, y: 14.047422, z: 14.047422}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -199.16068}
+  m_LocalScale: {x: 2.6521025, y: 2.6521025, z: 0.026521023}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 750024792}
-  m_Father: {fileID: 1911789354}
+  m_Father: {fileID: 1771969172}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1217.6, y: -1544}
+  m_AnchoredPosition: {x: -57, y: -215.5}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &583201454
@@ -1215,6 +1215,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1911789353}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 583201452}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -2362,6 +2374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dae525d51486164abf0bc8c39cffbaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   DeckManager: {fileID: 1107687179}
   cardPrefabs:
   - {fileID: 7631706574147347091, guid: f91a004b58318bc46ad031aef8ad8997, type: 3}
@@ -2369,6 +2382,10 @@ MonoBehaviour:
   - {fileID: 7631706574147347091, guid: 9d1db8fdb277d3d4f895bc1fc0d800ac, type: 3}
   - {fileID: 7631706574147347091, guid: 549f2ce9b3a2f044d87e0b494e0fa3fe, type: 3}
   - {fileID: 7631706574147347091, guid: ce63a5e7f1d13a44d99e7d3d474939e6, type: 3}
+=======
+  DeckManager: {fileID: 0}
+  cardPrefab: {fileID: 7631706574147347091, guid: 1a3f79d52c245e641a3cc3dc90c4ea43, type: 3}
+>>>>>>> Stashed changes
   handTransform: {fileID: 1697742080}
   handSpread: -7.5
   cardsInHand:
@@ -2392,11 +2409,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allCards:
+<<<<<<< Updated upstream
   - {fileID: 11400000, guid: 5448475ee6e7a764eb7da4c429bc550f, type: 2}
   - {fileID: 11400000, guid: 7a9b7939ac0e76e41beec2b9ee4e05b6, type: 2}
   - {fileID: 11400000, guid: c7341154fb25d5443bd65a92a641ef3a, type: 2}
   - {fileID: 11400000, guid: 52de2789e5afbed499f5eaf024f4f211, type: 2}
   - {fileID: 11400000, guid: 7a5b16a2beecf704ab78bde843b7cbe1, type: 2}
+=======
+  - {fileID: 11400000, guid: d0bc09b445f50c146b3d866762d32c31, type: 2}
+  - {fileID: 11400000, guid: 965bd8f613f7c834fa25c1e9e61c0b43, type: 2}
+>>>>>>> Stashed changes
 --- !u!1 &1111632941
 GameObject:
   m_ObjectHideFlags: 0
@@ -2534,6 +2556,7 @@ CanvasRenderer:
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
+<<<<<<< Updated upstream
   m_Modification:
     serializedVersion: 3
     m_TransformParent: {fileID: 1771969172}
@@ -2564,11 +2587,54 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6311637202951891031, guid: 35082b24ee34244d7b41f8741bf1d0c1, type: 3}
       propertyPath: m_AnchorMax.y
+=======
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2135792809}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1205706652
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205706650}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 0039d57191c531944a1b64ea91579f7d, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.52
+  m_Pitch: 0.08
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+>>>>>>> Stashed changes
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6311637202951891031, guid: 35082b24ee34244d7b41f8741bf1d0c1, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
+<<<<<<< Updated upstream
       objectReference: {fileID: 0}
     - target: {fileID: 6311637202951891031, guid: 35082b24ee34244d7b41f8741bf1d0c1, type: 3}
       propertyPath: m_AnchorMin.y
@@ -2636,6 +2702,91 @@ PrefabInstance:
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35082b24ee34244d7b41f8741bf1d0c1, type: 3}
 --- !u!4 &1205706651 stripped
+=======
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.754
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1205706653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205706650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8c15197352361642a572054a5900760, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1259362564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1259362565}
+  m_Layer: 0
+  m_Name: 'Option Manager  '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1259362565
+>>>>>>> Stashed changes
 Transform:
   m_CorrespondingSourceObject: {fileID: 6892143793527165074, guid: 09fb986909d495f439a0397e9bf4a832, type: 3}
   m_PrefabInstance: {fileID: 495853345264208407}
@@ -3849,7 +4000,11 @@ RectTransform:
   - {fileID: 863289436}
   - {fileID: 1911789354}
   - {fileID: 1913174719}
+<<<<<<< Updated upstream
   - {fileID: 2048796213}
+=======
+  - {fileID: 583201453}
+>>>>>>> Stashed changes
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3970,8 +4125,13 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
+<<<<<<< Updated upstream
   m_AnchoredPosition: {x: 368, y: -71}
   m_SizeDelta: {x: 1.352, y: 0.4618}
+=======
+  m_AnchoredPosition: {x: 4.0600586, y: -761.05}
+  m_SizeDelta: {x: 0.01, y: 0.01}
+>>>>>>> Stashed changes
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1849961878
 MonoBehaviour:
@@ -4045,7 +4205,6 @@ RectTransform:
   - {fileID: 1976682993}
   - {fileID: 1394047521}
   - {fileID: 1063239005}
-  - {fileID: 583201453}
   m_Father: {fileID: 1771969172}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
@@ -4132,7 +4291,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1913174719
 RectTransform:
   m_ObjectHideFlags: 0

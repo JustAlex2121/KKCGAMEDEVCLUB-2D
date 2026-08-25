@@ -14,8 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: 'All purpose '
   cardFlavor: 
+<<<<<<< Updated upstream
   flavorPoints: 3
   damageMin: 11
   damageMax: 20
+=======
+  flavorPoints: 2
+  damageMin: 5
+  damageMax: 12
+>>>>>>> Stashed changes
   damageType: 
   cardSprite: {fileID: 6405474885964148421, guid: 9c2c4866f69f941429dbfe5fb6d4de22, type: 3}
