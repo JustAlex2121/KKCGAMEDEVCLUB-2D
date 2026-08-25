@@ -10,7 +10,7 @@ public class HandManager : MonoBehaviour
    public List<GameObject> cardPrefabs; //Assign card prefab in inspector
 
     public Transform handTransform; //hand position center
-    
+    public GameObject Handposition; // the object that gets shown/hidden
 
     public float handSpread = -7.5f; //how much hand is spread out
   
@@ -20,6 +20,41 @@ public class HandManager : MonoBehaviour
 
     public float verticalSpacing = 100f;
 
+    public int cardsPerTurn = 6; // Number of cards to draw each turn (set default or adjust as needed)
+
+    private void OnEnable()
+    {
+        GameManager.OnGameStateChanged += HandleGameStateChanged;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnGameStateChanged -= HandleGameStateChanged;
+    }
+
+    private void HandleGameStateChanged(GameState state)
+    {
+        if (state == GameState.PlayerTurn)
+        {
+            StartNewPlayerTurn();
+        }
+    }
+
+    private void StartNewPlayerTurn()
+    {
+        Handposition.SetActive(true);
+
+        foreach (GameObject card in cardsInHand)
+        {
+            Destroy(card);
+        }
+        cardsInHand.Clear();
+
+        for (int i = 0; i < cardsPerTurn; i++)
+        {
+            DeckManager.DrawCard(this);
+        }
+    }
     public List<GameObject> GetCardsInHand()
     {
         return cardsInHand;

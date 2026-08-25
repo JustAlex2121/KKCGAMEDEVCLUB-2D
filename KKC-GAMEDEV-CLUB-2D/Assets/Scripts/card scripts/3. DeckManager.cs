@@ -25,15 +25,26 @@ public class DeckManager : MonoBehaviour
         allCards.Clear();
         allCards.AddRange(cards);
 
-       // ShuffleDeck();
-
+        // ShuffleDeck();
+        Debug.Log("Loaded " + allCards.Count + " cards into deck.");
         //currentIndex = 0;
 
         for (int i = 0; i < 6; i++){
             DrawCard(hand);
         }
     }
+     public void DrawCard(HandManager handManager)
+    {
+        if (allCards.Count == 0)
+        {
+            Debug.Log("Deck is empty — no card drawn.");
+            return;
+        }
 
+        int randomIndex = Random.Range(0, allCards.Count);
+        Card nextCard = allCards[randomIndex];
+        handManager.AddCardToHand(nextCard);
+    }
     //private void ShuffleDeck()
     //{
         //for (int i = 0; i < allCards.Count; i++)
@@ -45,19 +56,12 @@ public class DeckManager : MonoBehaviour
        // }
     //}
 
-    public void DrawCard(HandManager handManager)
-    {
-        if (allCards.Count == 0)
-            return;
-
-            int randomIndex = Random.Range(0, allCards.Count);
-            Card nextCard = allCards[randomIndex];
-        handManager.AddCardToHand(nextCard);
+    
 
        /* HandManager hand = FindFirstObjectByType<HandManager>();
         for (int i = 0; i < 6; i++)
         {
             DrawCard(hand);
         } */
-    }
+    
 }
