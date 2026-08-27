@@ -43,9 +43,8 @@ private void HandleGameStateChanged(GameState state)
     private IEnumerator EnemyTurnRoutine()
     {
         yield return new WaitForSeconds(attackDelay); // gives animation time to play
-        animator?.SetTrigger("SnakeAttackTrigger");
+        BasicAttack();
         yield return new WaitForSeconds(0.5f); // optional pause after attack before handing back control
-        
         GameManager.Instance.UpdateGameState(GameState.PlayerTurn);
     }
 
@@ -69,6 +68,6 @@ private void HandleGameStateChanged(GameState state)
         {
             health.TakeDamage(attackDamage);
         }
-         //animator?.SetTrigger("SnakeAttackTrigger");
+         animator?.SetTrigger("SnakeAttackTrigger");
     }
 }
