@@ -120,7 +120,7 @@ public class CardMovement: MonoBehaviour, IDragHandler, IPointerDownHandler, IPo
 
                 if(rectTransform.localPosition.y > cardPlay.y)
                 {
-                    FlavorPointManager flavorManager = FindObjectOfType<FlavorPointManager>();
+                    FlavorPointManager flavorManager = Object.FindFirstObjectByType<FlavorPointManager>();
                     CardDisplay cardDisplay = GetComponent<CardDisplay>();
 
                     if (flavorManager != null && cardDisplay != null && cardDisplay.cardData != null)

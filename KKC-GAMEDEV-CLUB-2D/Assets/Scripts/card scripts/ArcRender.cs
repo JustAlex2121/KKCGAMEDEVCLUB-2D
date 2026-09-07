@@ -76,7 +76,7 @@ public class ArcRender : MonoBehaviour
         for (int i=0; i < numDots && i < dotPool.Count; i++)
         {
             float t = i / (float)numDots;
-            t = Mathf.Clamp(t, 0f, 1f); //enture to stays within the range [0,1]
+            t = Mathf.Clamp(t, 0f, 1f); //eture to stays within the range [0,1]
 
             Vector3 position = QuadraticBezierPoint(start, mid, end, t);
             Debug.Log("Dot" + i + "position" + position);
@@ -147,7 +147,7 @@ public class ArcRender : MonoBehaviour
 
                 cardProjectile.Launch(arcStartPos, arcMidPoint, arcEndPos, damage);
 
-                FlavorPointManager flavorManager = FindObjectOfType<FlavorPointManager>();
+                FlavorPointManager flavorManager = Object.FindFirstObjectByType<FlavorPointManager>();
                 if (flavorManager != null && cardDisplay != null && cardDisplay.cardData != null)
                 {
                     flavorManager.CurFlav -= cardDisplay.cardData.flavorPoints;

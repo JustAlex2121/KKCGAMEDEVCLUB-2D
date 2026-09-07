@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -9,10 +9,6 @@ public class GameManager : MonoBehaviour
     private int playerHealth;
     private int playerXP;
     private int difficulty;
-
-    public OptionManager optionManager { get; private set; }
-   public AudioManager audioManager { get; private set; }
-    public DeckManager deckManager { get; private set; }
 
     public GameState State;
 
@@ -24,52 +20,14 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            InitializeManagers();
+         
         }
         else
         {
             Destroy(gameObject);
         }
     }
-    private void InitializeManagers()
-    {
-        optionManager = GetComponent<OptionManager>();
-       deckManager = GetComponent<DeckManager>();
-        audioManager = GetComponent<AudioManager>();
-
-        if (optionManager == null)
-        {
-            GameObject prefab = Resources.Load<GameObject>("Prefabs/OptionManager");
-            if (prefab == null)
-            {
-                Debug.LogError("OptionManager prefab not found in Resources/Prefabs.");
-
-            }
-            else
-            {
-                Instantiate(prefab, transform.position, Quaternion.identity, transform);
-                optionManager = GetComponentInChildren<OptionManager>();
-            }
-        }
-
-        
-
-        if (audioManager == null)
-        {
-            GameObject prefab = Resources.Load<GameObject>("Prefabs/AudioManager");
-            if (prefab == null)
-            {
-                Debug.LogError("AudioManager prefab not found in Resources/Prefabs.");
-                    }
-                    else
-                    {
-                        Instantiate(prefab, transform.position, Quaternion.identity, transform);
-                        audioManager = GetComponentInChildren<AudioManager>();
-                    }
-                }
-            
-        
-    }
+   
 
 
     public int PlayerHealth
@@ -97,23 +55,29 @@ public class GameManager : MonoBehaviour
     }
     public void UpdateGameState(GameState newState)
     {
+        Debug.Log($"UpdateGameState called: {newState} (previous: {State})");
         State = newState;
 
         switch (newState)
         {
             case GameState.Title:
                 HandleTitle();
-                break;
+                Debug.Log("Game State: Title");
+                                break;
             case GameState.PlayerTurn:
                 HandlePlayerTurn();
+                Debug.Log("Game State: Player Turn");
                 break;
             case GameState.EnemyTurn:
-               // HandleEnemyTurn();  
+                Debug.Log("Game State: Enemy Turn");
+                // HandleEnemyTurn();  
                 break;
             case GameState.Victory:
+               Debug.Log("Game State: Victory");
                 // Handle Victory state
                 break;
             case GameState.Defeat:
+               Debug.Log("Game State: Defeat");
                 // Handle Defeat state
                 break;
                 default:

@@ -6,6 +6,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject _TitlePanel;
     private Button startButton;
     private GameManager gameManager;
+    public GameObject card;
     private void Awake()
     {
         GameManager.OnGameStateChanged += GameManagerOnOnGameStateChanged;
@@ -26,7 +27,7 @@ public class UIManager : MonoBehaviour
     {
         _TitlePanel.SetActive(state==GameState.Title);
     }
-    public void OnButtonClicked()
+    void OnButtonClicked()
     { GameManager.Instance.UpdateGameState(GameState.PlayerTurn); }
   
 
