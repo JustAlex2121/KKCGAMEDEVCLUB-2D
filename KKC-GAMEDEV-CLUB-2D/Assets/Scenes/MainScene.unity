@@ -2209,12 +2209,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DeckManager: {fileID: 1107687179}
-  cardPrefabs: []
+  cardPrefabs:
+  - {fileID: 7631706574147347091, guid: 1a3f79d52c245e641a3cc3dc90c4ea43, type: 3}
+  - {fileID: 7631706574147347091, guid: f91a004b58318bc46ad031aef8ad8997, type: 3}
+  - {fileID: 7631706574147347091, guid: 9d1db8fdb277d3d4f895bc1fc0d800ac, type: 3}
+  - {fileID: 7631706574147347091, guid: 549f2ce9b3a2f044d87e0b494e0fa3fe, type: 3}
+  - {fileID: 7631706574147347091, guid: ce63a5e7f1d13a44d99e7d3d474939e6, type: 3}
   handTransform: {fileID: 1697742080}
   handSpread: -7.5
   cardsInHand: []
-  cardSpacing: 150
-  verticalSpacing: 100
+  cardSpacing: 2.5
+  verticalSpacing: 1.5
 --- !u!114 &1107687179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2227,7 +2232,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3563c24a0da19a4facd05291c03a1c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allCards: []
+  allCards:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1111632941
 GameObject:
   m_ObjectHideFlags: 0
@@ -2754,7 +2764,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 1
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 5
@@ -2768,7 +2778,7 @@ RectTransform:
   m_GameObject: {fileID: 1360612526}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.73802084, y: 0.73802084, z: 0.73802084}
+  m_LocalScale: {x: 0.8588542, y: 0.8588542, z: 0.8588542}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1107687177}
@@ -2777,8 +2787,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 708.5, y: 450.5}
-  m_SizeDelta: {x: 1920, y: 1220.8328}
+  m_AnchoredPosition: {x: 824.5, y: 484.5}
+  m_SizeDelta: {x: 1920, y: 1128.2474}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1394047520
 GameObject:
@@ -3540,7 +3550,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -961.4106, y: -614.94}
+  m_AnchoredPosition: {x: -964.92, y: -568}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1702841355
