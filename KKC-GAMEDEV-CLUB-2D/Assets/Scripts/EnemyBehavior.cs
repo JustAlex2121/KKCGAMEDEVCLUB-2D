@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyBehavior : MonoBehaviour
 {
@@ -54,6 +55,7 @@ private void HandleGameStateChanged(GameState state)
         healthBar.SetHealth(HitPoints, MaxHitPoints);
         if (HitPoints <= 0)
         {
+            SceneManager.LoadScene("GameOver");
             Destroy(gameObject);
         }
     }
