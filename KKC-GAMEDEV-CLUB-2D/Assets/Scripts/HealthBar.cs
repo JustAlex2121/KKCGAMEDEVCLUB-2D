@@ -20,7 +20,7 @@ public class HealthBar : MonoBehaviour{
         }
         else { Destroy(gameObject); }
 
-        PlayHealth = GameObject.Find("Player").GetComponent<Health3>();
+        PlayHealth = GameObject.FindWithTag("Player").GetComponent<Health3>();
 
     }
 
@@ -28,6 +28,7 @@ public class HealthBar : MonoBehaviour{
     // Update is called once per frame
     void Update()
     {
+        if (PlayHealth == null) return;
         HealthLerp = 10f * Time.deltaTime;
         FillHpBar();
         testHP = (float)PlayHealth.health/(float)PlayHealth.maxHealth;
@@ -37,8 +38,11 @@ public class HealthBar : MonoBehaviour{
     {
         if (!PlayHealth)
         {
-            PlayHealth = GameObject.Find("Player").GetComponent<Health3>();
+            PlayHealth = GameObject.FindWithTag("Player").GetComponent<Health3>();
         }
+
+        if (PlayHealth == null || HpBar == null) return;
+        
         HpBar.fillAmount = (float)PlayHealth.health / (float)PlayHealth.maxHealth;
     }
 

@@ -76,7 +76,7 @@ public class ArcRender : MonoBehaviour
         for (int i=0; i < numDots && i < dotPool.Count; i++)
         {
             float t = i / (float)numDots;
-            t = Mathf.Clamp(t, 0f, 1f); //enture to stays within the range [0,1]
+            t = Mathf.Clamp(t, 0f, 1f); //eture to stays within the range [0,1]
 
             Vector3 position = QuadraticBezierPoint(start, mid, end, t);
             Debug.Log("Dot" + i + "position" + position);
@@ -132,12 +132,27 @@ public class ArcRender : MonoBehaviour
                 arcMidPoint = CalculateMidPoint(arcStartPos, arcEndPos);
 
                 GameObject projectile = Instantiate(projectilePrefab, arcStartPos, Quaternion.identity);
+                Debug.Log("Projectile instantiated at: " + arcStartPos);
                 CardProjectile cardProjectile = projectile.GetComponent<CardProjectile>();
 
-                DamageDealer damageDealer = GetComponentInParent<DamageDealer>();
-                int damage = damageDealer != null ? damageDealer.GetDamage() : 10;
+                 
+
+                CardDisplay cardDisplay = GetComponentInParent<CardDisplay>();
+                float damage = 10f; //default 
+                if (cardDisplay != null && cardDisplay.cardData != null)
+                {
+                    damage = Random.Range(cardDisplay.cardData.damageMin, cardDisplay.cardData.damageMax + 1);
+                    Debug.Log("Card damage:" + damage);
+                }
 
                 cardProjectile.Launch(arcStartPos, arcMidPoint, arcEndPos, damage);
+
+                FlavorPointManager flavorManager = Object.FindFirstObjectByType<FlavorPointManager>();
+                if (flavorManager != null && cardDisplay != null && cardDisplay.cardData != null)
+                {
+                    flavorManager.CurFlav -= cardDisplay.cardData.flavorPoints;
+                    flavorManager.UpdateFlavorAmount();
+                }
 
                 Destroy(transform.parent.gameObject);
             }
