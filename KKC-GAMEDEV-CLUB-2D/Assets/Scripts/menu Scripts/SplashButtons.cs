@@ -26,6 +26,15 @@ public class SplashButton : MonoBehaviour
         SceneManager.LoadScene("ExitScreen", LoadSceneMode.Single);
         //Actually find grammar for exiting game window
     }
+    public void QuitGame()
+    {
+        Debug.Log("Quit button is pressed");
+        Application.Quit();
+
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #endif
+    }
     
     
 }
