@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
             case GameState.Title:
                 HandleTitle();
                 Debug.Log("Game State: Title");
-                                break;
+                break;
             case GameState.PlayerTurn:
                 HandlePlayerTurn();
                 Debug.Log("Game State: Player Turn");

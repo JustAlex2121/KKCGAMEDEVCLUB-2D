@@ -1,4 +1,4 @@
-// EndTurnButtonController.cs — attach to EndButton GameObject only
+// EndTurnButtonController.cs ï¿½ attach to EndButton GameObject only
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,6 +18,7 @@ public class EndTurnButtonController : MonoBehaviour
     {
         GameManager.Instance.UpdateGameState(GameState.EnemyTurn);
         Handposition.SetActive(false);
+        Debug.Log("From button");
     }
 
     private void HandleGameStateChanged(GameState state)
