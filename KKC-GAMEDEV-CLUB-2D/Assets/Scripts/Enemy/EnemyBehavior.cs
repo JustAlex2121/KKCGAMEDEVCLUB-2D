@@ -31,6 +31,21 @@ public class EnemyBehavior : MonoBehaviour
         GameManager.OnGameStateChanged -= HandleGameStateChanged;
     }
 
+/* private void HandleGameStateChanged(GameState state)
+{
+    Debug.Log("The State is :" + state);
+    if (turnRoutine != null)
+    {
+        StopCoroutine(turnRoutine);
+        turnRoutine = null;
+    }
+
+    if (state == GameState.EnemyTurn)
+        turnRoutine = StartCoroutine(EnemyTurnRoutine(state));
+    else if (state == GameState.PlayerTurn)
+         StopCoroutine(turnRoutine);
+
+} */
 
 private void HandleGameStateChanged(GameState state)
 {
@@ -39,14 +54,17 @@ private void HandleGameStateChanged(GameState state)
         if (turnRoutine != null) StopCoroutine(turnRoutine);
         turnRoutine = StartCoroutine(EnemyTurnRoutine());
     }
+
 }
 
     private IEnumerator EnemyTurnRoutine()
     {
+
         yield return new WaitForSeconds(attackDelay); // gives animation time to play
         BasicAttack();
         yield return new WaitForSeconds(0.5f); // optional pause after attack before handing back control
         GameManager.Instance.UpdateGameState(GameState.PlayerTurn);
+
     }
 
     public void TakeDamage(float damage)
@@ -62,6 +80,7 @@ private void HandleGameStateChanged(GameState state)
 
     public void BasicAttack()
     {
+
         if (health == null)
         {
             health = FindFirstObjectByType<Health3>();
@@ -71,5 +90,6 @@ private void HandleGameStateChanged(GameState state)
             health.TakeDamage(attackDamage);
         }
          animator?.SetTrigger("SnakeAttackTrigger");
+
     }
 }
