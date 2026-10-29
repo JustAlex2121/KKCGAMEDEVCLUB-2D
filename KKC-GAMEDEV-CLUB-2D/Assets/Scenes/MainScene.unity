@@ -1387,7 +1387,7 @@ MonoBehaviour:
   MaxHitPoints: 50
   healthBar: {fileID: 1995184809}
   attackDamage: 10
-  attackDelay: 1.5
+  attackDelay: 2.5
 --- !u!1 &750024791
 GameObject:
   m_ObjectHideFlags: 0

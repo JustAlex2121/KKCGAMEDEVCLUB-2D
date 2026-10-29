@@ -12,7 +12,8 @@ public class EnemyBehavior : MonoBehaviour
     private Health3 health;
     private Animator animator;
     private Coroutine turnRoutine;
-    private bool attack;
+    private bool ranalready;
+    
 
     void Start()
     {
@@ -32,75 +33,46 @@ public class EnemyBehavior : MonoBehaviour
         GameManager.OnGameStateChanged -= HandleGameStateChanged;
     }
 
-/* private void HandleGameStateChanged(GameState state)
-{
-    Debug.Log("The State is :" + state);
-    if (turnRoutine != null)
+    /* private void HandleGameStateChanged(GameState state)
     {
-        StopCoroutine(turnRoutine);
-        turnRoutine = null;
+        Debug.Log("The State is :" + state);
+        if (turnRoutine != null)
+        {
+            StopCoroutine(turnRoutine);
+            turnRoutine = null;
+        }
+
+        if (state == GameState.EnemyTurn)
+            turnRoutine = StartCoroutine(EnemyTurnRoutine(state));
+        else if (state == GameState.PlayerTurn)
+             StopCoroutine(turnRoutine);
+
+    } */
+
+    private void HandleGameStateChanged(GameState state)
+    {
+        Debug.Log("HandleGameStateChanged called with state:" + state);
+        ranalready = false;
+        if (state == GameState.EnemyTurn)
+        {
+            if (turnRoutine != null) StopCoroutine(turnRoutine);
+            turnRoutine = StartCoroutine(EnemyTurnRoutine());
+        }
+
     }
-
-    if (state == GameState.EnemyTurn)
-        turnRoutine = StartCoroutine(EnemyTurnRoutine(state));
-    else if (state == GameState.PlayerTurn)
-         StopCoroutine(turnRoutine);
-
-} */
-
-private void HandleGameStateChanged(GameState state)
-{
-    Debug.Log("HandleGameStateChanged called with state:" + state);
-    attack = true;
-    if (state == GameState.EnemyTurn)
-    {   
-        if (turnRoutine != null) StopCoroutine(turnRoutine);
-        turnRoutine = StartCoroutine(EnemyTurnRoutine());
-    }
-
-} 
-
     private IEnumerator EnemyTurnRoutine()
     {
-        int timesran = 0;
-        while (attack)
-        { 
-            timesran += 1;
-            Debug.Log("Attack inside EnemyTurnRoutine is:" + attack);
-            Debug.Log("coroutine ran" + timesran + "times");
-         yield return new WaitForSeconds(attackDelay); // gives animation time to play
-         BasicAttack();
+        Debug.Log("enemyroutineran");
+        animator?.SetTrigger("SnakeAttackTrigger");
+        yield return new WaitForSeconds(attackDelay); // gives animation time to play
+        BasicAttack();
         yield return new WaitForSeconds(0.5f); // optional pause after attack before handing back control
+
         GameManager.Instance.UpdateGameState(GameState.PlayerTurn);
-        }
-
-
-    }
-  /*  private void EnemyTurnRoutine()
-    {
         
-        
-         StartCoroutine(Timer(attackDelay));
-
-         BasicAttack();
-
-        StartCoroutine(Timer(0.5f));
-        GameManager.Instance.UpdateGameState(GameState.PlayerTurn);
-
+        stopturnroutine();
+        yield break;
     }
-
-    private IEnumerator Timer(float time)
-    {
-        float timer = 0f;
-        if(timer < time)
-        {
-            timer += Time.deltaTime;
-        }
-       yield break;
-
-    }
-*/
-
 
 
     public void TakeDamage(float damage)
@@ -116,27 +88,28 @@ private void HandleGameStateChanged(GameState state)
 
     public void BasicAttack()
     {
-        Debug.Log("enemy attack ran");
-        if (health == null)
+        Debug.Log(ranalready + "is the value of ranalready");
+        if (!ranalready)
         {
-            health = FindFirstObjectByType<Health3>();
+            Debug.Log("enemy attack ran");
+            if (health == null)
+            {
+                health = FindFirstObjectByType<Health3>();
+            }
+            if (health != null)
+            {
+                health.TakeDamage(attackDamage);
+            }
+            //animator?.SetTrigger("SnakeAttackTrigger");
+            ranalready = true;
         }
-        if (health != null)
-        {
-            health.TakeDamage(attackDamage);
-        }
-         animator?.SetTrigger("SnakeAttackTrigger");
-         stop();
-         //attack = false;
-        //  Debug.Log("attack is: " + attack );
+
     }
 
-    private void stop()
+    private void stopturnroutine()
     {
-        
-        attack = false;
-        Debug.Log("Stop!!!! " + attack);
         StopCoroutine(turnRoutine);
+        
     }
 
     
