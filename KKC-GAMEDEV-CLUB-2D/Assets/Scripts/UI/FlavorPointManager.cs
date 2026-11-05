@@ -44,6 +44,24 @@ public class FlavorPointManager : MonoBehaviour
         UpdateFlavorAmount();
 
     }
+    
+    private void OnEnable()
+    {
+        GameManager.OnGameStateChanged += HandleGameStateChanged;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnGameStateChanged -= HandleGameStateChanged;
+    }
+
+    private void HandleGameStateChanged(GameState state)
+    {
+        if (state == GameState.PlayerTurn)
+        {
+            ResetCurToMaxFlavor();
+        }
+    }
 
     //For testing purposes only
     /*void Update()

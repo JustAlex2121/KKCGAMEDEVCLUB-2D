@@ -25,6 +25,28 @@ public class HandManager : MonoBehaviour
         return cardsInHand;
     }
 
+private void OnEnable()
+    {
+        GameManager.OnGameStateChanged += HandleGameStateChanged;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnGameStateChanged -= HandleGameStateChanged;
+    }
+
+    private void HandleGameStateChanged(GameState state)
+    {
+        if (state == GameState.PlayerTurn)
+        {
+            StartNewPlayerTurn();
+        }
+    }
+private void StartNewPlayerTurn()
+{
+    handTransform.gameObject.SetActive(true);
+  
+}
     public void AddCardToHand(Card cardData)
     {
         if (cardPrefabs == null || cardPrefabs.Count == 0)
