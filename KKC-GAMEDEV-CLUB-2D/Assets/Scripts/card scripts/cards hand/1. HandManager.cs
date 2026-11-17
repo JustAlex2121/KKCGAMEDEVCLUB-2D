@@ -14,11 +14,15 @@ public class HandManager : MonoBehaviour
 
     public float handSpread = -7.5f; //how much hand is spread out
   
-    public List<GameObject> cardsInHand = new List<GameObject>(); //hold a list of the card objects in player hand
+    [HideInInspector]public List<GameObject> cardsInHand = new List<GameObject>(); //hold a list of the card objects in player hand
 
     public float cardSpacing = 150f;
 
+    public int startingHandSize = 5;
+
     public float verticalSpacing = 100f;
+
+    private GameState previousState;
 
     public List<GameObject> GetCardsInHand()
     {
@@ -27,26 +31,52 @@ public class HandManager : MonoBehaviour
 
 private void OnEnable()
     {
+        Debug.Log("HandManager subcribed");
         GameManager.OnGameStateChanged += HandleGameStateChanged;
     }
 
     private void OnDisable()
     {
+        
         GameManager.OnGameStateChanged -= HandleGameStateChanged;
     }
 
     private void HandleGameStateChanged(GameState state)
     {
-        if (state == GameState.PlayerTurn)
+        Debug.Log("Handmager recieve stats" + state);
+
+        if(state == GameState.PlayerTurn)
         {
             StartNewPlayerTurn();
         }
+        else if (previousState == GameState.PlayerTurn)
+        {
+            EndPlayerTurn();
+        }
+        
+        previousState = state;
     }
-private void StartNewPlayerTurn()
-{
-    handTransform.gameObject.SetActive(true);
-  
-}
+    
+    private void StartNewPlayerTurn()
+    {
+        handTransform.gameObject.SetActive(true);
+
+        for (int i = 0; i < startingHandSize; i++)
+        {
+            DeckManager.DrawCard(this);
+        }
+    }
+
+    private void EndPlayerTurn()
+    {
+        foreach (GameObject card in cardsInHand)
+        {
+            if (card != null)
+                Destroy(card);
+        }
+        cardsInHand.Clear();
+    }
+
     public void AddCardToHand(Card cardData)
     {
         if (cardPrefabs == null || cardPrefabs.Count == 0)
@@ -103,17 +133,10 @@ private void StartNewPlayerTurn()
         }
     }
 
-    //may need for debugging
-    void Start() //Card in the deck
+    void Start()
     {
-       // AddCardToHand();
-      //  AddCardToHand();
-      //  AddCardToHand();
+        cardsInHand.Clear();
     }
+
     
-   /*  public void AddCardToHand() //Can be updated in the engine editor 
-    {
-        //Instaniate the card
-        GameObject newCard = Instantiate(cardPrefab, handTransform.position, Quaternion.identity, handTransform);
-    } */
 }
